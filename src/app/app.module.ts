@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import {ListEmployeesComponent} from './components/list-employees/list-employees.component';
 import {CreateEmployeeComponent} from './components/create-employee/create-employee.component';
 import {NavbarComponent} from './components/navbar/navbar.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import {NavbarComponent} from './components/navbar/navbar.component';
     CreateEmployeeComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
