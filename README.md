@@ -1,5 +1,14 @@
 # Angular List-of-Employees
 
+[![License](http://img.shields.io/:license-mit-blue.svg)](https://github.com/lytves/vue-basic-authentication-example/blob/master/LICENSE)
+![Framework](https://img.shields.io/badge/Framework-Angular11-red)
+
+Demo: 
+
+Udemy - [App Employees on Angular 11 and Firebase](https://www.udemy.com/course/app-empleado-angular-firebase/) (Spanish)
+
+We will create a CRUD in Angular, use Firebase, Firestore as BackEnd and deploy the project.
+
 ## Modules, Components and Libraries used:
 + This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.
 + Angular Routing (AppRoutingModule)
