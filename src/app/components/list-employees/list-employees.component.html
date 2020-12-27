@@ -16,45 +16,18 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-          <td>Tomas</td>
-          <td>Perez</td>
-          <td>88979328B</td>
-          <td>2500</td>
+        <tr *ngFor="let employee of employees">
+          <td>{{ employee.firstName }}</td>
+          <td>{{ employee.lastName }}</td>
+          <td>{{ employee.document }}</td>
+          <td>{{ employee.salary }}</td>
           <td>
             <i class="fas fa-user-edit mr-3 fa-lg text-info"></i>
             <i class="fas fa-user-slash fa-lg text-danger"></i>
           </td>
         </tr>
-        <tr>
-          <td>Tomas</td>
-          <td>Perez</td>
-          <td>88979328B</td>
-          <td>2500</td>
-          <td>
-            <i class="fas fa-user-edit mr-3 fa-lg text-info"></i>
-            <i class="fas fa-user-slash fa-lg text-danger"></i>
-          </td>
-        </tr>
-        <tr>
-          <td>Tomas</td>
-          <td>Perez</td>
-          <td>88979328B</td>
-          <td>2500</td>
-          <td>
-            <i class="fas fa-user-edit mr-3 fa-lg text-info"></i>
-            <i class="fas fa-user-slash fa-lg text-danger"></i>
-          </td>
-        </tr>
-
         </tbody>
       </table>
-      <ul>
-        <li class="text" *ngFor="let employee of employees | async">
-          {{ employee.firstName }}
-          {{ employee.lastName }}
-        </li>
-      </ul>
     </div>
   </div>
 </div>
