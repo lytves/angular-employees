@@ -49,6 +49,12 @@
 
         </tbody>
       </table>
+      <ul>
+        <li class="text" *ngFor="let employee of employees | async">
+          {{ employee.firstName }}
+          {{ employee.lastName }}
+        </li>
+      </ul>
     </div>
   </div>
 </div>
