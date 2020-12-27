@@ -18,4 +18,8 @@ export class EmployeeService {
     return this.fireStore.collection('employees', ref => ref.orderBy('createDate', 'asc'))
       .snapshotChanges();
   }
+
+  deleteEmployee(id: string): Promise<any> {
+      return this.fireStore.collection('employees').doc(id).delete();
+  }
 }

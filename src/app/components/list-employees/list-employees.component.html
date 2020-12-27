@@ -20,11 +20,14 @@
           <td>{{ employee.firstName }}</td>
           <td>{{ employee.lastName }}</td>
           <td>{{ employee.document }}</td>
-          <td>{{ employee.salary }}</td>
+          <td>{{ employee.salary | currency }}</td>
           <td>
             <i class="fas fa-user-edit mr-3 fa-lg text-info"></i>
-            <i class="fas fa-user-slash fa-lg text-danger"></i>
+            <i (click)="deleteEmployee(employee.id)" class="fas fa-user-slash fa-lg text-danger"></i>
           </td>
+        </tr>
+        <tr *ngIf="employees.length == 0">
+          <td colspan="5">There are no employees</td>
         </tr>
         </tbody>
       </table>

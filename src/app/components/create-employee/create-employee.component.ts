@@ -46,8 +46,6 @@ export class CreateEmployeeComponent implements OnInit {
       editDate: new Date()
     };
 
-    console.warn('employee', employee);
-
     this._employeeService.applyEmployee(employee).then(() => {
       this.toastr.success('Employee has been applied!', 'Apply Employee', {positionClass: 'toast-bottom-right'});
       this.router.navigate(['list-employees']);

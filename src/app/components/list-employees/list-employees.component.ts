@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AngularFirestore} from '@angular/fire/firestore';
 import {Observable} from 'rxjs';
 import {EmployeeService} from '../../services/employee.service';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-list-employees',
@@ -11,8 +12,9 @@ import {EmployeeService} from '../../services/employee.service';
 export class ListEmployeesComponent implements OnInit {
   employees: any[] = [];
 
-  constructor(firestore: AngularFirestore, private _employeeService: EmployeeService) {
-    // this.employees = firestore.collection('employees').valueChanges();
+  constructor(firestore: AngularFirestore,
+              private _employeeService: EmployeeService,
+              private toastr: ToastrService) {
   }
 
   ngOnInit(): void {
@@ -28,7 +30,15 @@ export class ListEmployeesComponent implements OnInit {
           ...e.payload.doc.data()
         });
       });
-      console.warn('employees', this.employees);
+    });
+  }
+
+  deleteEmployee(id: string): void {
+    this._employeeService.deleteEmployee(id).then(() => {
+      throw new Error();
+      this.toastr.success('Employee has been Removed!', 'Remove Employee', {positionClass: 'toast-bottom-right'});
+    }).catch((error) => {
+      this.toastr.error('Failed to remove!', 'Remove Employee', {positionClass: 'toast-bottom-right'});
     });
   }
 
