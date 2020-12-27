@@ -3,7 +3,7 @@
 [![License](http://img.shields.io/:license-mit-blue.svg)](https://github.com/lytves/vue-basic-authentication-example/blob/master/LICENSE)
 ![Framework](https://img.shields.io/badge/Framework-Angular11-red)
 
-Demo: 
+Demo: [Angular List-of-Employees](https://lytves.github.io/angular-employees/)
 
 Udemy - [App Employees on Angular 11 and Firebase](https://www.udemy.com/course/app-empleado-angular-firebase/) (Spanish)
 
