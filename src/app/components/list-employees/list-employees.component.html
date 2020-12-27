@@ -22,7 +22,7 @@
           <td>{{ employee.document }}</td>
           <td>{{ employee.salary | currency }}</td>
           <td>
-            <i class="fas fa-user-edit mr-3 fa-lg text-info"></i>
+            <i [routerLink]="['/edit-employee', employee.id]" class="fas fa-user-edit mr-3 fa-lg text-info"></i>
             <i (click)="deleteEmployee(employee.id)" class="fas fa-user-slash fa-lg text-danger"></i>
           </td>
         </tr>

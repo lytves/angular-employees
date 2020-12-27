@@ -22,4 +22,12 @@ export class EmployeeService {
   deleteEmployee(id: string): Promise<any> {
       return this.fireStore.collection('employees').doc(id).delete();
   }
+
+  getEmployee(id: string): Observable<any> {
+    return this.fireStore.collection('employees').doc(id).snapshotChanges();
+  }
+
+  updateEmployee(id: string, data: any): Promise<any> {
+    return this.fireStore.collection('employees').doc(id).update(data);
+  }
 }
