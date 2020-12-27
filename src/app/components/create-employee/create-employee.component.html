@@ -4,6 +4,9 @@
       <div class="card text-center">
         <div class="card-body">
           <h3>Add Employee</h3>
+          <div *ngIf="loading" class="spinner-border text-info" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
 
           <div *ngIf="submitted && createEmployee.invalid">
             <div class="badge badge-danger p-3">Please, fill correctly all the fields!</div>

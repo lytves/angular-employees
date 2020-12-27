@@ -12,6 +12,7 @@ import {ToastrService} from 'ngx-toastr';
 export class CreateEmployeeComponent implements OnInit {
   createEmployee: FormGroup;
   submitted = false;
+  loading = false;
 
   constructor(private fb: FormBuilder,
               private _employeeService: EmployeeService,
@@ -30,7 +31,10 @@ export class CreateEmployeeComponent implements OnInit {
 
   applyEmployee(): void {
     this.submitted = true;
+    this.loading = true;
+
     if (this.createEmployee.invalid) {
+      this.loading = false;
       return;
     }
     const employee: any = {
@@ -48,7 +52,8 @@ export class CreateEmployeeComponent implements OnInit {
       this.toastr.success('Employee has been applied!', 'Apply Employee', {positionClass: 'toast-bottom-right'});
       this.router.navigate(['list-employees']);
     }).catch((error) => {
-      console.error('Error');
+      this.loading = false;
+      this.toastr.error('Failed to apply!', 'Apply Employee', {positionClass: 'toast-bottom-right'});
     });
   }
 
